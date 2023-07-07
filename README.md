@@ -2,10 +2,10 @@
 
 ![Test](https://github.com/philiprbrenan/relativePythonPackages/workflows/Test/badge.svg)
 
-The __import__ statements in ```sounds/format/mp3.py``` work because of the
-careful choice of start [folder](https://en.wikipedia.org/wiki/File_folder) and use of **-m** keyword.  Other combinations
-do not work and require appropriate modifications of ```sys.path```
-to avoid the infamous message:
+The __import__ statements in ```sounds/format/mp3.py``` works because of the
+careful choice of start [folder](https://en.wikipedia.org/wiki/File_folder) and the use of **-m** keyword.  Other
+combinations do not appear to work and seem to require appropriate
+modifications of ```sys.path``` to avoid the infamous message:
 
 ```
 ImportError: attempted relative import with no known parent package
