@@ -34,7 +34,7 @@ for my $s(@files)                                                               
 if (1)                                                                          # Work flow on github
  {my $d = dateTimeStamp;
 
-  my $y = <<"END".job("test");
+  my $y = <<"END";
 # Test $d
 
 name: Test
