@@ -60,13 +60,17 @@ jobs:
     - name: Relative call
       run:  python3 -m sound.formats.mp3
 
-    - name: Error call
+    - name: Error call - wrong start folder
       if: \${{ always() }}
       run:  python3 sound/formats/mp3.py
 
-    - name: Error call
+    - name: Error call - no package established
       if: \${{ always() }}
       run:  (cd sound/formats; python3 mp3.py)
+
+    - name: Error call - ImportError: attempted relative import with no known parent package
+      if: \${{ always() }}
+      run:  (cd sound/formats; python3 -m mp3)
 END
 
   my $f = writeFileUsingSavedToken $user, $repo, $wf, $y;                       # Upload workflow
