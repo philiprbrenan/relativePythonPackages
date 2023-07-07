@@ -68,7 +68,7 @@ jobs:
       if: \${{ always() }}
       run:  (cd sound/formats; python3 mp3.py)
 
-    - name: Error call
+    - name: Error call - ImportError
       if: \${{ always() }}
       run:  (cd sound/formats; python3 -m mp3)
 END
