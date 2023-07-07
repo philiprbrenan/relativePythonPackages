@@ -57,7 +57,7 @@ jobs:
       with:
         ref: 'main'
 
-    - name: Relative call
+    - name: Successfull call
       run:  python3 -m sound.formats.mp3
 
     - name: Error call - wrong start folder
