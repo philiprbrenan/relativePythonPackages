@@ -1,4 +1,4 @@
-# Test 2023-07-08 at 00:38:28
+# Test 2023-07-08 at 00:40:45
 
 name: Test
 
@@ -21,10 +21,14 @@ jobs:
     - name: Relative call
       run:  python3 -m sound.formats.mp3
 
-    - name: Error call
+    - name: Error call - wrong start folder
       if: ${{ always() }}
       run:  python3 sound/formats/mp3.py
 
-    - name: Error call
+    - name: Error call - no package established
       if: ${{ always() }}
       run:  (cd sound/formats; python3 mp3.py)
+
+    - name: Error call - ImportError: attempted relative import with no known parent package
+      if: ${{ always() }}
+      run:  (cd sound/formats; python3 -m mp3)
