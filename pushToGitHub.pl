@@ -24,11 +24,13 @@ expandWellKnownWordsInMarkDownFile $readMe, fpe $home, qw(README md);
 
 push my @files, searchDirectoryTreesForMatchingFiles($home, qw(.py .md .pl));   # Files to upload
 
-for my $s(@files)                                                               # Upload each selected file
- {my $c = readFile($s);                                                         # Load file
-  my $t = swapFilePrefix $s, $home;
-  my $w = writeFileUsingSavedToken($user, $repo, $t, $c);
-  lll "$w $s $t";
+if (1)                                                                          # Upload files
+ {for my $s(@files)                                                             # Upload each selected file
+   {my $c = readFile($s);
+    my $t = swapFilePrefix $s, $home;
+    my $w = writeFileUsingSavedToken($user, $repo, $t, $c);
+    lll "$w $s $t";
+   }
  }
 
 if (1)                                                                          # Work flow on github
