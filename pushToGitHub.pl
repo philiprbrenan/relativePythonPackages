@@ -62,15 +62,15 @@ jobs:
 
     - name: Error call - wrong start folder
       if: \${{ always() }}
-      run:  python3 sound/formats/mp3.py
+      run:  python3 sound/formats/mp3.py || true
 
     - name: Error call - no package established
       if: \${{ always() }}
-      run:  (cd sound/formats; python3 mp3.py)
+      run:  (cd sound/formats; python3 mp3.py) || true
 
     - name: Error call - ImportError
       if: \${{ always() }}
-      run:  (cd sound/formats; python3 -m mp3)
+      run:  (cd sound/formats; python3 -m mp3) || true
 END
 
   my $f = writeFileUsingSavedToken $user, $repo, $wf, $y;                       # Upload workflow
