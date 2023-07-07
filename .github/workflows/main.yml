@@ -1,4 +1,4 @@
-# Test 2023-07-08 at 00:45:27
+# Test 2023-07-08 at 00:46:52
 
 name: Test
 
@@ -18,7 +18,7 @@ jobs:
       with:
         ref: 'main'
 
-    - name: Relative call
+    - name: Successfull call
       run:  python3 -m sound.formats.mp3
 
     - name: Error call - wrong start folder
