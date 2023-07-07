@@ -68,7 +68,7 @@ jobs:
       if: \${{ always() }}
       run:  (cd sound/formats; python3 mp3.py)
 
-    - name: Error call - ImportError: attempted relative import with no known parent package
+    - name: Error call - ImportError attempted relative import with no known parent package
       if: \${{ always() }}
       run:  (cd sound/formats; python3 -m mp3)
 END
