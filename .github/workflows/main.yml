@@ -1,0 +1,30 @@
+# Test 2023-07-08 at 00:37:46
+
+name: Test
+
+on:
+  push:
+    paths:
+      - '**.pm'
+      - '**pushToGitHub.pl'
+      - '**.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: 'main'
+
+    - name: Relative call
+      run:  python3 -m sound.formats.mp3
+
+    - name: Error call
+      if: ${{ always() }}
+      run:  python3 sound/formats/mp3.py
+
+    - name: Error call
+      if: ${{ always() }}
+      run:  (cd sound/formats; python3 mp3.py)
